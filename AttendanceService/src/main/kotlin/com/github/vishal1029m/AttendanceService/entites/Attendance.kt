@@ -8,8 +8,8 @@ import java.util.Date
 @Table(uniqueConstraints = [UniqueConstraint(columnNames = ["employee_id", "date"])])
 data class Attendance(
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private var id: Long? = null,
-    private var employeeId: Long? = null,
+    var id: Long? = null,
+    var employeeId: Long? = null,
     var date: LocalDate = LocalDate.now(),
     var clockInTime: Date = Date(),
     var clockOutTime: Date = Date(),

@@ -1,10 +1,6 @@
 server:
   port: 8080
 
-spring:
-  application:
-    name: API-GATEWAY
-
 eureka:
   instance:
     prefer-ip-address: true
@@ -14,10 +10,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 
-cloud:
-  gateway:
-    routes:
-      - id: USER-SERVICE
-        uri: lb://USER-SERVICE
-        preficates:
-          - Paths=/users/ 
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: ATTENDANCE-SERVICE
+            uri: lb://ATTENDANCE-SERVICE
+            predicates:
+              - Path=/api/attendance/**
+          - id: EMPLOYEE-SERVICE
+            uri: lb://EMPLOYEE-SERVICE
+            predicates:
+              - Path=/api/**

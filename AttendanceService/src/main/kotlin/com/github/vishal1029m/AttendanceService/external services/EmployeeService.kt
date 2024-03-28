@@ -14,8 +14,5 @@ import org.springframework.web.bind.annotation.PathVariable
     @GetMapping("/api/employee/")
     fun getEmployee():ResponseEntity<List<EmployeeDto>>
     @GetMapping("/api/employee/{employeeId}")
-    fun getEmployeeById( @PathVariable employeeId : Long) : ResponseEntity<Any>
-
-    @GetMapping("/api/employee/{employeeId}")
-    fun getEmployeeById1( @PathVariable employeeId : Long) : ResponseEntity<EmployeeDto>
+    fun getEmployeeById( @PathVariable employeeId : Long) : ResponseEntity<EmployeeDto>
 }
