@@ -19,6 +19,14 @@ spring:
             uri: lb://ATTENDANCE-SERVICE
             predicates:
               - Path=/api/attendance/**
+          - id: PAYROLL-SERVICE
+            uri: lb://PAYROLL-SERVICE
+            predicates:
+              - Path=/api/payroll/**
+          - id: PERFORMANCE-REVIEW-SERVICE
+            uri: lb://PERFORMANCE-REVIEW-SERVICE
+            predicates:
+              - Path=/api/performance-review/**
           - id: EMPLOYEE-SERVICE
             uri: lb://EMPLOYEE-SERVICE
             predicates:
